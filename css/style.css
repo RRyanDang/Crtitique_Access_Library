@@ -143,6 +143,20 @@ main {
 .home-photo { max-width: none; margin: 0; }
 .home-photo img { width: 100%; }
 
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 42rem) minmax(0, 1fr);
+  align-items: start;
+  gap: 2rem;
+}
+.about-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  gap: 1.25rem;
+}
+.about-photos figure { max-width: none; margin: 0; }
+
 .washroom-photos,
 .entrance-photos {
   display: grid;
@@ -324,6 +338,12 @@ figcaption {
   .site-nav ul { gap: 0.1rem 1rem; }
   .washroom-photos,
   .entrance-photos { grid-template-columns: minmax(0, 1fr); }
+  .about-photos { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 64rem) {
+  .about-layout { grid-template-columns: minmax(0, 1fr); }
+  .about-photos { max-width: 42rem; }
 }
 
 @media (max-width: 52rem) {
